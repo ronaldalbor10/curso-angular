@@ -65,3 +65,47 @@ const objeto1: Obj = {
 objeto1.prop4 = 'propiedad 4';
 
 console.table(objeto1);
+
+// declaracion de funciones
+
+function sumar(a: number, b: number):number{
+    return a+b;
+}
+
+const resultado = sumar(10,30);
+
+console.log(resultado);
+
+//parametros requeridos, opcionales y los que tienen un valor por defecto
+function multiplicar(a: number, b?: number ,c: number = 10){
+    return a*c;
+}
+
+const resultado2 = multiplicar(10,30);
+
+console.log(resultado2);
+
+interface Personaje {
+    nombre: string;
+    vida: number;
+    mostrarVida: ()=> void;
+}
+
+//declarar una funcion que no retorna valor
+
+function sanar(personaje: Personaje, puntos: number):void{
+    personaje.vida +=puntos;
+    console.log(personaje);
+}
+
+const nuevoPersonaje: Personaje = {
+    nombre:"Ronald",
+    vida:80,
+    mostrarVida(){
+        console.log('Los puntos de vida del personaje es:',this.vida);
+    }
+}
+
+sanar(nuevoPersonaje,20);
+
+nuevoPersonaje.mostrarVida();
