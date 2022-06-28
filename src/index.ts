@@ -330,6 +330,27 @@ const miClase = new MiSuperClase();
 
 console.log(miClase.miPropiedad);
 
+// Clase 28  ENcadenamiento opcional
+
+interface Persona {
+    nombre:string;
+    hijos?: string[];
+}
+
+const persona1: Persona = {
+    nombre:"Ronald"
+}
+
+const persona2:Persona = {
+    nombre:"Maria",
+    hijos: ['Marcela','Juan']
+}
    
+function cantidaHijos(persona:Persona): void {
+    //cuando la propiedad o valor de variable es undefined se utiliza el caracter ? para evaluar si la propiedad o valor esta definido
+    //si esta definido sigue con la proxima sentecia anidada si no devolvera undefined
+    const cntHijos = persona.hijos?.length || 0;
+    console.log(cntHijos);
+}
 
-
+cantidaHijos(persona1);
