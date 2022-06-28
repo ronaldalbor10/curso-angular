@@ -261,3 +261,33 @@ const carritoCompras: Producto2[] = [
 const [total2, ISV2] = CalculaISV2(carritoCompras);
 console.log('Total:',total2);
 console.log('ISV:',ISV2);
+
+//Clase 23 Clases Basicas
+
+class personaNormal {
+    constructor(
+        public nombre: string,
+        public direccion:string
+    ){}
+}
+
+class Heroe extends personaNormal {
+    alterEgo : string;
+    edad: number;
+    //nombreReal:string;
+
+    //Consttructor es una funcon que se llama automaticamente al instanciar un objeto de la clase
+    constructor(alterEgo: string, 
+                edad:number, 
+                // O se puede instanciar el atributo dentro del constructor
+                public nombreReal:string )
+    
+    {
+        super(nombreReal,'St. 10 Av 92');
+        this.alterEgo =alterEgo;
+        this.edad = edad;
+        //this.nombreReal = nombreReal;
+    }
+}
+const irmoman = new Heroe('IronMan',30,'Tony Stark');
+console.log(irmoman);
