@@ -291,3 +291,17 @@ class Heroe extends personaNormal {
 }
 const irmoman = new Heroe('IronMan',30,'Tony Stark');
 console.log(irmoman);
+
+
+// Clase 26 Genericos 
+//La declaración de un tipo de dato generico, se realiza con la siguiente notación <T>
+
+function tipoDedato<T> (argumento: T){
+    return argumento;
+}
+
+let esString = tipoDedato('Hola Mundo');
+let esNumber = tipoDedato(100);
+let esArray = tipoDedato(['271','33']);
+let esBoolean = tipoDedato(true);
+let esExplicito = tipoDedato<number>(100);
