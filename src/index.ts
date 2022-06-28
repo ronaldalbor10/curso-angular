@@ -1,5 +1,6 @@
 
 
+
 console.log('Hola Mundo!');
 
 /*
@@ -239,3 +240,24 @@ const [total, ISV] = CalculaISV(articulos);
 
 console.log('Total:',total);
 console.log('ISV:',ISV);
+
+//Clase 22 Importaciones y exportaciones 
+import { Producto2, CalculaISV2 } from "./export";
+const carritoCompras: Producto2[] = [
+    { 
+        nombre: 'telefono',
+        precio: 150
+    },
+    { 
+        nombre: 'tablet',
+        precio: 70
+    },
+    { 
+        nombre: 'computadora',
+        precio: 300
+    }
+];
+
+const [total2, ISV2] = CalculaISV2(carritoCompras);
+console.log('Total:',total2);
+console.log('ISV:',ISV2);
