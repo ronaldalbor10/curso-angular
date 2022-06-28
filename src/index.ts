@@ -305,3 +305,31 @@ let esNumber = tipoDedato(100);
 let esArray = tipoDedato(['271','33']);
 let esBoolean = tipoDedato(true);
 let esExplicito = tipoDedato<number>(100);
+
+// Clase 27 Decoradores de Clases
+
+function reportableClassDecorator<T extends { new (...args: any[]): {} }>(constructor: T) {
+    return class extends constructor {
+      reportingURL = "http://www...";
+      newPropertie = "Nueva propiedad";
+    };
+  }
+
+//Establezca la opción "experimentalDecorators" en "tsconfig" o "jsconfig" para quitar esta advertencia.
+@reportableClassDecorator
+class MiSuperClase {
+    public miPropiedad:string = 'AbC12309';
+
+    imprimir(){
+        console.log('Hola mundo '+this.miPropiedad);
+    }
+}
+console.log(MiSuperClase); 
+
+const miClase = new MiSuperClase();
+
+console.log(miClase.miPropiedad);
+
+   
+
+
