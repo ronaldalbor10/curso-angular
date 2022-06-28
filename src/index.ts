@@ -200,3 +200,42 @@ console.log('El lenguaje 1 es:',lenguajes[0]);
 console.log('El lenguaje 2 es:',lenguajes[1]);
 console.log('El lenguaje 3 es:',lenguajes[2]);
 
+// Clase 21 Desestructuración de argumentos
+
+interface Producto {
+    desc: string;
+    valor: number;
+}
+
+const portatil: Producto = {
+    desc:'Computadora portatil HP Probook',
+    valor: 120
+}
+
+const Computadora: Producto = {
+    desc:'Computadora All in One',
+    valor: 200
+}
+
+
+function CalculaISV(productos: Producto[]):[number, number] {
+    let total = 0;
+
+    
+    //productos.forEach((producto)=>{
+    productos.forEach(({valor})=>{    
+        //total +=producto.valor;
+        total +=valor;
+    });
+    
+ 
+
+    return [total,total * 1.19];
+}
+
+const articulos = [portatil,Computadora];
+
+const [total, ISV] = CalculaISV(articulos);
+
+console.log('Total:',total);
+console.log('ISV:',ISV);
